@@ -1,7 +1,6 @@
 package com.msp1.lol_champions.services;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,8 +18,8 @@ public class ChampionService {
         return championRepository.findAll();
     }
 
-    public Optional<Champion> getChampionById(Long id) {
-        return championRepository.findById(id);
+    public Champion getChampionByName(String name) {
+        return championRepository.findChampionByName(name);
     }
 
     public Champion createChampion(Champion champion) {

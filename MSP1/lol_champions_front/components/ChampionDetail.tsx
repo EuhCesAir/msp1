@@ -1,4 +1,5 @@
 import { Champion } from "../types";
+import Link from "next/link";
 
 interface ChampionDetailProps {
   champion: Champion;
@@ -13,6 +14,28 @@ export default function ChampionDetail({ champion }: ChampionDetailProps) {
 
   return (
     <div className="container mx-auto px-4 py-8">
+      <div className="py-4">
+        <Link
+          href={`/`}
+          className="inline-flex items-center text-blue-600 hover:text-blue-800"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="mr-2"
+          >
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+          </svg>
+          <span>Back</span>
+        </Link>
+      </div>
       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
         <div className="relative pt-[56.25%]">
           {" "}
@@ -51,9 +74,11 @@ export default function ChampionDetail({ champion }: ChampionDetailProps) {
               </div>
             ))}
           </div>
-          <a href="" className="text-xl underline mb-2 text-blue-600">
-            Skins list
-          </a>
+          <Link href={`/skins/${champion.name}`} key={champion.name}>
+            <div className="underline text-blue-600">
+              {champion.name} Skin List
+            </div>
+          </Link>
         </div>
       </div>
     </div>

@@ -28,6 +28,11 @@ public class SkinController {
         return skinService.getAllSkins();
     }
 
+    @GetMapping("/{name}")
+    public List<Skin> getChampionSkins(@PathVariable String name) {
+        return skinService.getChampioSkins(name);
+    }
+
     @PostMapping("/create")
     public Skin createSkin(@RequestBody Skin skin) {
         return skinService.createSkin(skin);

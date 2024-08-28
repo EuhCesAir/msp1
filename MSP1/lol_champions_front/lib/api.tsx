@@ -10,18 +10,18 @@ export async function getChampions(): Promise<Champion[]> {
   return response.json();
 }
 
-export async function getChampion(id: number): Promise<Champion> {
-  const response = await fetch(`${API_BASE_URL}/champions/${id}`);
+export async function getChampion(name: string): Promise<Champion> {
+  const response = await fetch(`${API_BASE_URL}/champions/${name}`);
   if (!response.ok) {
-    throw new Error(`Failed to fetch champion with id ${id}`);
+    throw new Error(`Failed to fetch champion with name ${name}`);
   }
   return response.json();
 }
 
-export async function getSkins(id: number): Promise<Skin> {
-  const response = await fetch(`${API_BASE_URL}/champions/${id}`);
+export async function getSkins(name: string): Promise<Skin[]> {
+  const response = await fetch(`${API_BASE_URL}/skins/${name}`);
   if (!response.ok) {
-    throw new Error(`Failed to fetch champion with id ${id}`);
+    throw new Error(`Failed to fetch champion with name ${name}`);
   }
   return response.json();
 }

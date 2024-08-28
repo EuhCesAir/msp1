@@ -1,7 +1,6 @@
 package com.msp1.lol_champions.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,9 +29,9 @@ public class ChampionController {
         return championService.getAllChampions();
     }
 
-    @GetMapping("/{id}")
-    public Optional<Champion> getChampionById(@PathVariable Long id) {
-        return championService.getChampionById(id);
+    @GetMapping("/{name}")
+    public Champion getChampionById(@PathVariable String name) {
+        return championService.getChampionByName(name);
     }
 
     @PostMapping("/create")

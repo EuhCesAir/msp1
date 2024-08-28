@@ -29,7 +29,7 @@ export default function ChampionList() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {champions.map((champion) => (
-        <Link href={`/champions/${champion.id}`} key={champion.id}>
+        <Link href={`/champions/${champion.name}`} key={champion.name}>
           <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
             <div className="h-64 overflow-hidden bg-gray-200">
               <img

@@ -18,6 +18,10 @@ public class SkinService {
         return skinRepository.findAll();
     }
 
+    public List<Skin> getChampioSkins(String name) {
+        return skinRepository.findChampionSkin(name);
+    }
+
     public Skin createSkin(Skin skin) {
         return skinRepository.save(skin);
     }
