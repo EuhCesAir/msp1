@@ -32,8 +32,8 @@ public class SkinService {
      * }
      */
 
-    public void deleteSkinById(Long id) {
-        skinRepository.deleteById(id);
+    public void deleteSkinById(String name) {
+        skinRepository.deleteById(name);
     }
 
 }

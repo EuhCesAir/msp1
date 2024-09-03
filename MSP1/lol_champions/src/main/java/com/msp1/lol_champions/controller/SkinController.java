@@ -45,9 +45,9 @@ public class SkinController {
      * }
      */
 
-    @PostMapping("/delete/{id}")
-    public void deleteSkinById(@PathVariable Long id) {
-        skinService.deleteSkinById(id);
+    @PostMapping("/delete/{name}")
+    public void deleteSkinById(@PathVariable String name) {
+        skinService.deleteSkinById(name);
     }
 
 }
